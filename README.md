@@ -34,6 +34,5 @@ Do not upload local SQLite databases, personal face enrollment data, tokens or `
 ## Scientific context
 
 - [NASA Space Radiation](https://www.nasa.gov/directorates/esdmd/hhp/space-radiation/)
-- [NASA RadLab](https://visualization.osdr.nasa.gov/radlab)
 - [Canadian Space Agency radiation research](https://www.asc-csa.gc.ca/eng/news/articles/2026/2026-02-26-monitoring-radiation-astronaut-health.asp)
 - [Open Food Facts](https://world.openfoodfacts.org/)
