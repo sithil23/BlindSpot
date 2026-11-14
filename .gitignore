@@ -1,0 +1,30 @@
+# Local environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Runtime records and private data
+*.db
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+face_profiles/
+face_data/
+*face*profile*.json
+*face*profile*.npz
+*credentials*.json
+*secrets*.json
+*.pem
+*.key
+
+# Temporary files
+.DS_Store
+Thumbs.db
