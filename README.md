@@ -6,7 +6,7 @@ The application uses **Python and Streamlit**. Crew and habitat telemetry are **
 
 ## Features
 
-- Three-crew dashboard with health readings and alerts
+- Demo Three-crew dashboard with health readings and alerts
 - Two simulated habitat feeds, environmental warnings and sensor trends
 - Spacewalk before/after observations and experimental camera assessments
 - Radiation dose monitoring demonstrations with data-quality checks
