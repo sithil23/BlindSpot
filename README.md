@@ -24,6 +24,8 @@ During a space mission, useful information is spread across many measurements an
 
 Simulated sensor feeds provide readings to BLINDSPOT. The dashboard checks the values and whether the evidence is usable, then displays trends, warnings, and follow-up information. The spacewalk and nutrition tools add user-created records. Crew members can review and export information for investigation.
 
+[BlindSpot_by_SB.docx](https://github.com/user-attachments/files/34869284/BlindSpot_by_SB.docx)
+
 ## Run locally
 
 Requires Python 3.11 or newer.
