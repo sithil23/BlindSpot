@@ -4,6 +4,8 @@
 
 BLINDSPOT is a NASA Space Apps prototype that brings astronaut health observations, habitat conditions, spacewalk checks, radiation monitoring, and nutrition records into one simple dashboard.
 
+<img width="1908" height="932" alt="Screenshot 2026-11-15 124319" src="https://github.com/user-attachments/assets/f6b1b643-d060-4f8e-bb3f-3e2cd80cb4c5" />
+
 ## The problem
 
 During a space mission, useful information is spread across many measurements and records. Missing or unreliable readings can make it difficult for crew members to know what needs attention. BLINDSPOT brings these observations together and makes data gaps visible instead of treating them as normal.
