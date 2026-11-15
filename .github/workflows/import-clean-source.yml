@@ -1,23 +1,28 @@
-name: Import cleaned BLINDSPOT source
+name: Publish cleaned BLINDSPOT source
 on:
   push:
     paths:
-      - '.upload-parts/**'
+      - '.upload-parts/READY'
 permissions:
   contents: write
 jobs:
-  import:
-    runs-on: ubuntu-latest
+  publish:
     if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: true
-      - name: Expand uploaded source
+      - name: Verify and expand cleaned files
+        shell: bash
         run: |
-          cat .upload-parts/part-* | base64 --decode | xz --decompress | tar -xf -
+          set -euo pipefail
+          cat .upload-parts/part-* | base64 --decode > /tmp/clean-source.tar.xz
+          echo '8b6eb86236a29e6d3ec7630ae78951191297bf1a881e759d6e8bda9ae8a5a72b  /tmp/clean-source.tar.xz' | sha256sum -c -
+          tar -tJf /tmp/clean-source.tar.xz > /tmp/source-file-list
+          tar -xJf /tmp/clean-source.tar.xz
           rm -rf .upload-parts
           git rm --ignore-unmatch BLINDSPOT.zip
           git add -A
-          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m "Publish cleaned BLINDSPOT project files" || true
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m "Publish cleaned BLINDSPOT source as individual files"
           git push
