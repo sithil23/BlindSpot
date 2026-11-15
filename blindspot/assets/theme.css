@@ -1,0 +1,284 @@
+:root {
+  --bs-primary: #2153a0;
+  --bs-background: #eef3f8;
+  --bs-surface: #ffffff;
+  --bs-text: #172b45;
+  --bs-muted: #52657a;
+  --bs-success: #007b81;
+  --bs-warning: #a15a00;
+  --bs-border: #ccd7e4;
+  --bs-scroll-hover: #52657a;
+  --bs-scroll-active: #2153a0;
+  --bs-radius: 0.625rem;
+}
+* { scrollbar-color: var(--bs-muted) var(--bs-background); scrollbar-width: thin; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bs-background); }
+::-webkit-scrollbar-thumb { background: var(--bs-muted); border-radius: var(--bs-radius); }
+::-webkit-scrollbar-thumb:hover { background: var(--bs-scroll-hover); }
+::-webkit-scrollbar-thumb:active { background: var(--bs-scroll-active); }
+html { scrollbar-gutter: stable; }
+body { line-height: 1.5; }
+.stMainBlockContainer { max-width: 76rem; padding-top: 2rem; padding-bottom: 3rem; }
+h1, h2, h3 { font-family: 'Trebuchet MS', system-ui, sans-serif; color: var(--bs-text); }
+h1 { font-size: 2.125rem; letter-spacing: -0.025em; }
+h2 { font-size: 1.5rem; }
+[data-testid='stMetric'] { background: var(--bs-surface); padding: 1rem; border-radius: var(--bs-radius); }
+[data-testid='stMetricValue'] { font-variant-numeric: tabular-nums; }
+[data-testid='stCaptionContainer'], [data-testid='stCaptionContainer'] p,
+[data-testid='stCaption'] p, [data-testid='stImageCaption'] { color: var(--bs-muted); }
+button:not(:disabled), [role='tab'], [role='radio'], a { cursor: pointer; }
+button:disabled { cursor: not-allowed; }
+button:focus-visible, a:focus-visible, input:focus-visible, [role='radio']:focus-visible {
+  outline: 3px solid var(--bs-primary); outline-offset: 3px;
+}
+button:not(:disabled):hover { filter: brightness(0.94); }
+button:not(:disabled):active { transform: translateY(1px); }
+textarea { resize: none; }
+.wordmark { font-family: ui-monospace, monospace; font-weight: 700; letter-spacing: .22em;
+  color: var(--bs-primary); margin: 0 0 .8rem; }
+.local-note { font-family: ui-monospace, monospace; color: var(--bs-muted); font-size: .75rem; }
+.trace-wrap { background: var(--bs-surface); padding: 1rem; border: 1px solid var(--bs-border);
+  border-radius: var(--bs-radius); margin: .5rem 0; }
+.trace-wrap svg { display: block; width: 100%; height: auto; }
+.trace-wrap text { font-family: ui-monospace, monospace; fill: var(--bs-muted); font-size: 12px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none; transition: none; scroll-behavior: auto; }
+}
+@media (forced-colors: active) {
+  * { scrollbar-color: auto; }
+  .trace-wrap { border-color: CanvasText; }
+  button:focus-visible, a:focus-visible { outline-color: Highlight; }
+}
+@media (max-width: 640px) {
+  .stMainBlockContainer { padding: 1rem; }
+  h1 { font-size: 1.75rem; }
+}
+
+/* Plain, classic web interface: square corners and no motion. */
+:root { --bs-radius: 0; }
+.stApp, .stApp * { transition: none !important; animation: none !important; }
+.stApp button, .stApp input, .stApp textarea, .stApp select,
+.stApp [data-testid="stMetric"], .stApp [data-testid="stVerticalBlockBorderWrapper"],
+.stApp [data-testid="stPopover"], .stApp [data-testid="stAlert"],
+.stApp [data-testid="stExpander"], .stApp [data-testid="stSelectbox"],
+.stApp [data-testid="stFileUploader"], .stApp [data-baseweb="select"],
+.stApp [data-baseweb="popover"], .stApp [data-baseweb="input"],
+.stApp [data-baseweb="button"], .stApp [data-baseweb="tag"] {
+  border-radius: 0px !important;
+  box-shadow: none !important;
+}
+.stApp button { font-family: Arial, Helvetica, sans-serif !important; font-weight: 500 !important; }
+.stApp h1, .stApp h2, .stApp h3, .stApp p, .stApp label {
+  font-family: Arial, Helvetica, sans-serif !important;
+  letter-spacing: normal !important;
+}
+.stApp button:hover { filter: none !important; }
+.stApp [data-testid="stMetric"] { border: 1px solid #c4cbd3; }
+.stApp [data-testid="stMetricValue"] { font-size: 1.6rem; }
+
+/* Plain, non-interactive graph rendering: no Streamlit image toolbar. */
+.plain-svg-chart { width: 100%; background: #fff; border: 1px solid #c0c6cc; }
+.plain-svg-chart svg { display: block; width: 100%; height: auto; max-height: 250px; }
+/* Status console: simple rectangular box, positioned to the right of mission status. */
+.dashboard-warning-panel { min-height: 80px; }
+.dashboard-warning-entry { background: #d9dde2; color: #182b3c; padding: 12px 14px;
+    margin-bottom: 8px; border: 1px solid #a9b0b7; border-radius: 0; box-shadow: none; }
+.dashboard-warning-entry strong { display: block; font: bold 13px Arial, sans-serif; margin-bottom: 6px; }
+.dashboard-warning-entry div { font: 17px/1.35 Arial, sans-serif; }
+.stApp *, .stApp *::before, .stApp *::after { transition: none !important; animation: none !important;
+    scroll-behavior: auto !important; }
+
+/* Balanced mission dashboard: compact spacing, clear headings and flat panels. */
+.dashboard-section-label { font: 700 12px/1.5 Arial, sans-serif; letter-spacing: .06em;
+  color: #425971; margin: .25rem 0 .4rem; text-transform: uppercase; }
+.stApp [data-testid="stMetric"] { padding: .7rem .85rem; min-height: 78px; }
+.stApp [data-testid="stMetricLabel"] { font-size: .88rem; }
+.stApp [data-testid="stVerticalBlockBorderWrapper"] { border-color: #b8c7d8; }
+.stApp .plain-svg-chart { min-height: 145px; }
+.stApp .dashboard-warning-entry { min-height: 66px; background: #e7edf3; }
+@media (max-width: 900px) { .stApp .plain-svg-chart { min-height: 100px; } }
+
+/* Readable warning messages and plain button navigation. */
+.stApp .dashboard-warning-entry { padding: 16px 20px; min-height: 86px; }
+.stApp .dashboard-warning-entry strong { font-size: 1.25rem; line-height: 1.35; margin-bottom: 7px; }
+.stApp .dashboard-warning-entry div { font-size: 1.5rem; line-height: 1.4; font-weight: 600; }
+.stApp .plain-svg-chart { min-height: 185px; }
+.stApp .plain-svg-chart svg { max-height: 300px; }
+@media (max-width: 700px) {
+  .stApp .dashboard-warning-entry strong { font-size: 1.05rem; }
+  .stApp .dashboard-warning-entry div { font-size: 1.15rem; }
+}
+
+.stApp [title="Fullscreen"],
+.stApp [aria-label="Fullscreen"],
+.stApp [data-testid="StyledFullScreenButton"],
+.stApp [data-testid="stFullScreenButton"],
+.stApp button[title="View fullscreen"] {
+  display: none !important;
+}
+
+.dashboard-status-box {
+  background: #edf1f5;
+  border: 1px solid #b8c0c8;
+  padding: 12px 14px;
+  min-height: 52px;
+  margin-bottom: 10px;
+}
+
+.dashboard-warning-shell {
+  background: #d6dbe1;
+  border: 1px solid #9ca6af;
+  min-height: 150px;
+  padding: 12px;
+}
+
+.dashboard-warning-shell .dashboard-section-label {
+  margin-top: 0;
+}
+
+.dashboard-warning-entry {
+  background: #dde3ea;
+}
+
+.dashboard-warning-more {
+  font: 14px/1.4 Arial, Helvetica, sans-serif;
+  color: #21384f;
+  padding: 4px 2px 0;
+}
+
+.plain-svg-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 185px;
+  font: 16px Arial, Helvetica, sans-serif;
+  color: #40556b;
+}
+
+.crew-attention-item {
+  padding: 9px 10px;
+  border: 1px solid #b9c6d4;
+  border-radius: 0 !important;
+  background: #f0f4f8;
+  margin: 8px 0;
+  box-shadow: none !important;
+  font: 13px/1.6 Arial, Helvetica, sans-serif;
+}
+.crew-attention-item > strong {
+  font-size: 15px;
+}
+.crew-attention-state {
+  font-weight: 700;
+  color: #243f62;
+}
+.stApp [data-testid='stPopoverBody'],
+.stApp [data-testid='stPopoverBody'] > div {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.crew-attention-item { min-height: 230px; margin: 2px 0 4px; }
+.crew-attention-note { font: 12px/1.35 Arial, sans-serif; color: #4d6074; margin: 2px 0 12px; }
+
+.crew-attention-item.crew-attention-flagged {
+  background: #fbe2e2;
+  border: 2px solid #b54c4c;
+  animation: crew-attention-pulse 2.5s ease-in-out 2 !important;
+}
+.crew-attention-flagged .crew-attention-state { color: #8f2020; }
+.crew-attention-review {
+  border-top: 1px solid #d7a0a0;
+  margin-top: 10px;
+  padding-top: 7px;
+  font: 700 13px/1.45 Arial, sans-serif;
+  color: #8a1d1d;
+}
+.crew-attention-review div {
+  margin-top: 3px;
+  font-size: 12px;
+  font-weight: normal;
+}
+@keyframes crew-attention-pulse {
+  0%, 100% { background-color: #fbe2e2; border-color: #b54c4c; }
+  50% { background-color: #f3caca; border-color: #9f2727; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .crew-attention-item.crew-attention-flagged { animation: none !important; }
+}
+
+.meal-card {
+  background: #edf2f7;
+  border: 1px solid #b9c6d4;
+  border-radius: 0;
+  box-shadow: none;
+  min-height: 136px;
+  padding: 12px 14px;
+  font: 15px/1.6 Arial, Helvetica, sans-serif;
+}
+.meal-card > strong { display: block; font-size: 17px; margin-bottom: 5px; }
+.meal-card-note { color: #415c73; font-size: 14px; margin-top: 6px; }
+.meal-card-overdue { background: #fbe3e3; border: 2px solid #b54c4c; }
+.meal-card-overdue .meal-card-note { color: #932121; font-weight: 700; }
+
+/* Streamlit renders most floating panels in portals outside .stApp. */
+:root { --bs-radius: 0 !important; }
+html { scroll-behavior: auto !important; }
+
+.stApp *, .stApp *::before, .stApp *::after,
+[data-baseweb] *, [data-baseweb] *::before, [data-baseweb] *::after,
+[data-testid="stDialog"] *, [data-testid="stPopoverBody"] *,
+[data-testid="stSidebar"] *, [role="dialog"] *, [role="menu"] * {
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+  scroll-behavior: auto !important;
+}
+
+.stApp [data-testid="stExpander"] *,
+.stApp [data-testid="stPopover"] *,
+.stApp [data-testid="stSidebar"] *,
+[data-baseweb="popover"] *, [data-baseweb="modal"] *,
+[data-testid="stDialog"] *, [role="dialog"] *, [role="menu"] * {
+  animation-name: none !important;
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+}
+
+.stApp [data-testid="stExpander"],
+.stApp [data-testid="stExpander"] details,
+.stApp [data-testid="stExpander"] summary,
+.stApp [data-testid="stPopover"],
+.stApp [data-testid="stPopoverBody"],
+.stApp [data-testid="stSidebar"],
+.stApp [data-testid="stCameraInput"],
+.stApp [data-testid="stFileUploader"],
+.stApp [data-testid="stForm"],
+.stApp [data-testid="stAlert"],
+.stApp [data-testid="stButton"] button,
+.stApp [data-testid="stDownloadButton"] button,
+.stApp [data-testid="stTextInput"],
+.stApp [data-testid="stSelectbox"],
+.stApp [data-testid="stNumberInput"],
+.stApp [data-testid="stCheckbox"],
+[data-baseweb="popover"],
+[data-baseweb="popover"] *,
+[data-baseweb="modal"],
+[data-baseweb="modal"] *,
+[data-baseweb="tooltip"],
+[data-baseweb="select"],
+[data-baseweb="select"] *,
+[data-baseweb="input"],
+[data-baseweb="input"] *,
+[data-testid="stDialog"],
+[data-testid="stDialog"] *,
+[data-testid="stPopoverBody"],
+[data-testid="stPopoverBody"] *,
+[role="dialog"], [role="dialog"] *,
+[role="menu"], [role="menu"] * {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crew-attention-item.crew-attention-flagged { animation: none !important; }
+}

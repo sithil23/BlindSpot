@@ -1,0 +1,23 @@
+[Unit]
+Description=BLINDSPOT independent synthetic sensor API B
+After=network.target
+
+[Service]
+Type=simple
+User=blindspot
+Group=blindspot
+WorkingDirectory=/opt/blindspot
+EnvironmentFile=/etc/blindspot/sensor.env
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/blindspot/.venv/bin/python remote_sensor_api.py --host 127.0.0.1 --port 8766 --scenario co2_rise --eva-scenario exertion
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+MemoryMax=90M
+TasksMax=30
+
+[Install]
+WantedBy=multi-user.target

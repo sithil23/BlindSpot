@@ -1,0 +1,10 @@
+{
+  "id": "nasa-sensorimotor-risk",
+  "title": "NASA Human System Risks: Sensorimotor Risk",
+  "url": "https://www.nasa.gov/directorates/esdmd/hhp/sensorimotor-risk/",
+  "accessed": "2026-11-14",
+  "role": "research_context_only",
+  "summary": "NASA identifies altered-gravity effects on manual and fine motor control as part of sensorimotor risk, especially around gravity transitions.",
+  "application": "Motivates exploring a repeatable hand-movement task. BLINDSPOT measures observed tapping and separately reports whether tracking supports a personal comparison.",
+  "limitations": "This resource does not validate webcam tapping, establish quality cutoffs, or supply clinical thresholds. No astronaut data is used in this prototype. No NASA endorsement is implied."
+}

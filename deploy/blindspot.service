@@ -1,0 +1,29 @@
+[Unit]
+Description=BLINDSPOT synthetic mission-monitor demo
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=blindspot
+Group=blindspot
+WorkingDirectory=/opt/blindspot
+Environment=BLINDSPOT_PUBLIC=1
+EnvironmentFile=/etc/blindspot/sensor.env
+Environment=PYTHONUNBUFFERED=1
+Environment=OMP_NUM_THREADS=1
+Environment=OPENBLAS_NUM_THREADS=1
+ExecStart=/opt/blindspot/.venv/bin/python -m streamlit run app.py --server.address=127.0.0.1 --server.port=8501 --server.headless=true --server.enableCORS=true --server.enableXsrfProtection=true --server.maxUploadSize=2
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=15
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/opt/blindspot
+MemoryMax=560M
+TasksMax=100
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "origin": "synthetic_simulator",
+  "participant": "CREW-01",
+  "eva_id": "EVA-001",
+  "phase": "post",
+  "scenario": "exertion",
+  "seed": 42,
+  "export_time_s": 60,
+  "measurements": {
+    "ecg_hr": {
+      "value": 91.724,
+      "unit": "bpm",
+      "source": "synthetic",
+      "quality": "ok",
+      "observed_at_s": 60,
+      "sequence": 60
+    },
+    "ecg_rmssd": {
+      "value": 29.981,
+      "unit": "ms",
+      "source": "synthetic",
+      "quality": "ok",
+      "observed_at_s": 60,
+      "sequence": 60
+    },
+    "emg_rms": {
+      "value": 0.576,
+      "unit": "mV",
+      "source": "synthetic",
+      "quality": "ok",
+      "observed_at_s": 60,
+      "sequence": 60
+    },
+    "emg_activation": {
+      "value": 57.59,
+      "unit": "%",
+      "source": "synthetic",
+      "quality": "ok",
+      "observed_at_s": 60,
+      "sequence": 60
+    },
+    "spo2": {
+      "value": 98.057,
+      "unit": "%",
+      "source": "synthetic",
+      "quality": "ok",
+      "observed_at_s": 60,
+      "sequence": 60
+    },
+    "pulse_rate": {
+      "value": 89.324,
+      "unit": "bpm",
+      "source": "synthetic",
+      "quality": "ok",
+      "observed_at_s": 60,
+      "sequence": 60
+    },
+    "gaze_latency": {
+      "value": 331.116,
+      "unit": "ms",
+      "source": "synthetic",
+      "quality": "ok",
+      "observed_at_s": 60,
+      "sequence": 60
+    },
+    "gaze_error": {
+      "value": 4.045,
+      "unit": "degrees",
+      "source": "synthetic",
+      "quality": "ok",
+      "observed_at_s": 60,
+      "sequence": 60
+    },
+    "finger_taps": {
+      "value": 23.0,
+      "unit": "cycles",
+      "source": "synthetic",
+      "quality": "ok",
+      "observed_at_s": 60,
+      "sequence": 60
+    },
+    "cabin_co2": {
+      "value": 1131.743,
+      "unit": "ppm",
+      "source": "synthetic",
+      "quality": "ok",
+      "observed_at_s": 60,
+      "sequence": 60
+    },
+    "cabin_o2": {
+      "value": 20.895,
+      "unit": "%",
+      "source": "synthetic",
+      "quality": "ok",
+      "observed_at_s": 60,
+      "sequence": 60
+    }
+  },
+  "disclaimer": "Synthetic only; no real sensor or camera measurements; not medical or flight-qualified."
+}

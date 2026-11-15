@@ -1,0 +1,19 @@
+{
+  "profile": "product-admin",
+  "sourceRoots": ["blindspot"],
+  "locale": "en",
+  "canonicalMap": "UX-CONTRACT.md",
+  "requiredCapabilities": ["Form", "Scrollbar", "Toast", "CRUD"],
+  "requiredCommands": ["unit", "lint", "format", "types", "build"],
+  "commands": {
+    "unit": "python -m pytest -q",
+    "lint": "ruff check .",
+    "format": "ruff format --check .",
+    "types": "mypy blindspot",
+    "build": "python -m build"
+  },
+  "evidence": {
+    "crudFullFlow": "tests/test_ui.py",
+    "failurePaths": "tests/test_camera.py"
+  }
+}
