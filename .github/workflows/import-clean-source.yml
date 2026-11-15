@@ -1,0 +1,23 @@
+name: Import cleaned BLINDSPOT source
+on:
+  push:
+    paths:
+      - '.upload-parts/**'
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Expand uploaded source
+        run: |
+          cat .upload-parts/part-* | base64 --decode | xz --decompress | tar -xf -
+          rm -rf .upload-parts
+          git rm --ignore-unmatch BLINDSPOT.zip
+          git add -A
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m "Publish cleaned BLINDSPOT project files" || true
+          git push
