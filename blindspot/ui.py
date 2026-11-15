@@ -31,7 +31,7 @@ from blindspot.meals import CREW_IDS, MealStore, meal_status, meal_summary
 from blindspot.crew_attention import rank_crew, priority_alert, crew_report
 from blindspot.voice_alerts import voice_widget_html
 from blindspot.demo_controls import SCENARIOS as DEMO_SCENARIOS, apply_demo, gravity_reading, trend_history
-from blindspot.plain_charts import line_chart_svg
+from blindspot.plain_charts import line_chart_svg, chart_document
 from blindspot.radiation import apply_radiation_demo, radiation_flags
 from html import escape
 
